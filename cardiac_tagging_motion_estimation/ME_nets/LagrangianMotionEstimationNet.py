@@ -78,6 +78,45 @@ class unet_core(nn.Module):
 
         return y
 
+    
+class conv_block(nn.Module):
+    """
+    [conv_block] represents a single convolution block in the Unet which
+    is a convolution based on the size of the input channel and output
+    channels and then preforms a Leaky Relu with parameter 0.2.
+    """
+
+    def __init__(self, dim, in_channels, out_channels, stride=1):
+        """
+        Instiatiate the conv block
+            :param dim: number of dimensions of the input
+            :param in_channels: number of input channels
+            :param out_channels: number of output channels
+            :param stride: stride of the convolution
+        """
+        super(conv_block, self).__init__()
+
+        conv_fn = getattr(nn, "Conv{0}d".format(dim))
+
+        if stride == 1:
+            ksize = 3
+        elif stride == 2:
+            ksize = 4
+        else:
+            raise Exception('stride must be 1 or 2')
+
+        self.main = conv_fn(in_channels, out_channels, ksize, stride, 1)
+        self.activation = nn.LeakyReLU(0.2)
+
+    def forward(self, x):
+        """
+        Pass the input through the conv_block
+        """
+        out = self.main(x)
+        out = self.activation(out)
+        return out    
+ 
+
 class SpatialTransformer(nn.Module):
     """
     [SpatialTransformer] represesents a spatial transformation block
@@ -127,43 +166,6 @@ class SpatialTransformer(nn.Module):
         return nnf.grid_sample(src, new_locs, mode=self.mode)
 
 
-class conv_block(nn.Module):
-    """
-    [conv_block] represents a single convolution block in the Unet which
-    is a convolution based on the size of the input channel and output
-    channels and then preforms a Leaky Relu with parameter 0.2.
-    """
-
-    def __init__(self, dim, in_channels, out_channels, stride=1):
-        """
-        Instiatiate the conv block
-            :param dim: number of dimensions of the input
-            :param in_channels: number of input channels
-            :param out_channels: number of output channels
-            :param stride: stride of the convolution
-        """
-        super(conv_block, self).__init__()
-
-        conv_fn = getattr(nn, "Conv{0}d".format(dim))
-
-        if stride == 1:
-            ksize = 3
-        elif stride == 2:
-            ksize = 4
-        else:
-            raise Exception('stride must be 1 or 2')
-
-        self.main = conv_fn(in_channels, out_channels, ksize, stride, 1)
-        self.activation = nn.LeakyReLU(0.2)
-
-    def forward(self, x):
-        """
-        Pass the input through the conv_block
-        """
-        out = self.main(x)
-        out = self.activation(out)
-        return out
-
 class DiffeomorphicTransform(nn.Module):
     def __init__(self, size, mode='bilinear', time_step=7):
         super(DiffeomorphicTransform, self).__init__()
@@ -196,6 +198,7 @@ class DiffeomorphicTransform(nn.Module):
             flow = flow + nnf.grid_sample(flow, new_locs, mode=self.mode)
         return flow
 
+    
 class Lagrangian_flow(nn.Module):
     """
     [Lagrangian_flow] is a class representing the computation of Lagrangian flow (v12, v13, v14, ...) from inter frame
