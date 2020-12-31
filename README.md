@@ -24,4 +24,4 @@ We propose a fully unsupervised deep learning-based method for regional myocardi
 <div align=center><img width="200" height="400" src="https://github.com/DeepTag/cardiac_tagging_motion_estimation/blob/main/figures/2_CH_11_15_tag_grid_img.gif"/><img width="200" height="400" src="https://github.com/DeepTag/cardiac_tagging_motion_estimation/blob/main/figures/3_CH_12_16_tag_grid_img.gif"/><img width="200" height="400" src="https://github.com/DeepTag/cardiac_tagging_motion_estimation/blob/main/figures/4_CH_10_14_tag_grid_img.gif"/></div>
 
 ## Acknowledgments
-Our code implementation borrows heavily from the [VoxelMorph] (https://github.com/voxelmorph/voxelmorph)
+Our code implementation borrows heavily from the [VoxelMorph](https://github.com/voxelmorph/voxelmorph)
