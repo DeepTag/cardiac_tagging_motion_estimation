@@ -15,7 +15,7 @@ We propose a fully unsupervised deep learning-based method for regional myocardi
 <div align=center><img width="200" height="200" src="https://github.com/DeepTag/cardiac_tagging_motion_estimation/blob/main/figures/SAX_STACK_45_23_eu_motion.gif"/><img width="200" height="200" src="https://github.com/DeepTag/cardiac_tagging_motion_estimation/blob/main/figures/SAX_STACK_45_23_lag_motion.gif"/></div>
 
 4. Lagrangian motion fields: (left) x component; (right) y component.
-<div align=center><img width="420" height="180" src="https://github.com/DeepTag/cardiac_tagging_motion_estimation/blob/main/figures/SAX_STACK_45_23_lag_motion_map.gif"/></div>
+<div align=center><img width="400" height="180" src="https://github.com/DeepTag/cardiac_tagging_motion_estimation/blob/main/figures/SAX_STACK_45_23_lag_motion_map.gif"/></div>
 
 5. Tag grid tracking results on the short axis view: (left) tagging image sequence; (middle) warped virtual tag grid by the Lagrangian motion field; (right) virtual tag grid superimposed on tagging images. Note that the virtual tag grid has been aligned with the tag pattern at time t=0. As time goes on, the virtual tag grid is deformed by the predicted Lagrangian motion field and follows the underlying tag pattern in the images very well.
 <div align=center><img width="600" height="200" src="https://github.com/DeepTag/cardiac_tagging_motion_estimation/blob/main/figures/SAX_STACK_45_23_tag_grid_img.gif"/></div>
