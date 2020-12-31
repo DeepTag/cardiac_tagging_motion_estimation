@@ -97,7 +97,7 @@ def train_Cardiac_Tagging_ME_net(net, \
                 # set the param gradients as zero
                 optimizer.zero_grad()
                 # forward pass, backward pass and optimization
-                resgistered_cine1, resgistered_cine2, resgistered_cine1_lag, flow_param,  \
+                registered_cine1, registered_cine2, registered_cine1_lag, flow_param,  \
                 deformation_matrix, deformation_matrix_neg, deformation_matrix_lag = net(y, x)
 
                 train_smoothing_loss = smoothing_loss(deformation_matrix)
@@ -106,8 +106,8 @@ def train_Cardiac_Tagging_ME_net(net, \
 
                 a = 5
                 b = 1
-                training_loss = kl_loss(x, flow_param) + 0.5 * recon_loss(x, resgistered_cine1) + \
-                                0.5 * recon_loss(y, resgistered_cine2) + 0.5 * recon_loss(x, resgistered_cine1_lag) + \
+                training_loss = kl_loss(x, flow_param) + 0.5 * recon_loss(x, registered_cine1) + \
+                                0.5 * recon_loss(y, registered_cine2) + 0.5 * recon_loss(x, registered_cine1_lag) + \
                                 a * train_smoothing_loss + a * train_smoothing_loss_neg + b * train_smoothing_loss_lag
 
                 training_loss.backward()
@@ -157,7 +157,7 @@ def train_Cardiac_Tagging_ME_net(net, \
             y = y.view(-1, 1, height, width)  # batch_size * seq_length, channels=1, height, width
 
             # forward pass
-            val_resgistered_cine1, val_resgistered_cine2, val_resgistered_cine1_lag, \
+            val_registered_cine1, val_registered_cine2, val_registered_cine1_lag, \
             val_flow_param, val_deformation_matrix, val_deformation_matrix_neg, val_deformation_matrix_lag = net(y, x)
 
             val_smoothing_loss = smoothing_loss(val_deformation_matrix)
@@ -167,8 +167,8 @@ def train_Cardiac_Tagging_ME_net(net, \
 
             a = 5
             b = 1
-            val_loss = kl_loss(x, val_flow_param) + 0.5*recon_loss(x, val_resgistered_cine1) + \
-                       0.5*recon_loss(y, val_resgistered_cine2) + 0.5*recon_loss(x, val_resgistered_cine1_lag) + \
+            val_loss = kl_loss(x, val_flow_param) + 0.5*recon_loss(x, val_registered_cine1) + \
+                       0.5*recon_loss(y, val_registered_cine2) + 0.5*recon_loss(x, val_registered_cine1_lag) + \
                        a * val_smoothing_loss + a * val_smoothing_loss_neg + b * val_smoothing_loss_lag
 
             val_loss = val_loss / val_batch_num
