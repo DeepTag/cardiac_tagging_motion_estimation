@@ -164,7 +164,6 @@ def train_Cardiac_Tagging_ME_net(net, \
             val_smoothing_loss_neg = smoothing_loss(val_deformation_matrix_neg)
             val_smoothing_loss_lag = smoothing_loss(val_deformation_matrix_lag)
 
-
             a = 5
             b = 1
             val_loss = kl_loss(x, val_flow_param) + 0.5*recon_loss(x, val_registered_cine1) + \
