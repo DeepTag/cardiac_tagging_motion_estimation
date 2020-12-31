@@ -94,7 +94,7 @@ def test_Cardiac_Tagging_ME_net(net, \
 
         # forward pass
         with torch.no_grad():
-            val_resgistered_cine1, val_resgistered_cine2, val_resgistered_cine_lag, val_flow_param, \
+            val_registered_cine1, val_registered_cine2, val_registered_cine_lag, val_flow_param, \
             val_deformation_matrix, val_deformation_matrix_neg, val_deformation_matrix_lag = net(y, x)
 
         y = img[:, -1, ::]  # the last frame
