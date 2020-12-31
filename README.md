@@ -3,8 +3,6 @@ We propose a fully unsupervised deep learning-based method for regional myocardi
 
 <div align=center><img width="650" height="300" src="https://github.com/DeepTag/cardiac_tagging_motion_estimation/blob/main/figures/MT_tmri.png"/></div>
 
-Code will be released soon ...
-
 ## Supplementary results
 
 1. Tagging image sequence registration results: (upper-left) tagging image sequence; (upper-right) forward registration results; (bottom-left) backward registration results; (bottom-right) Lagrangian registration results.
@@ -24,3 +22,6 @@ Code will be released soon ...
 
 6. Tag grid tracking results on the long axis view: (upper) tagging image sequence; (bottom) virtual tag grid superimposed on tagging images. (left) 2 chamber view; (middle) 3 chamber view; (right) 4 chamber view. Our method can track local myocardium motion on both short axis and long axis views, by which we could recover the 3D motion field of the heart.
 <div align=center><img width="200" height="400" src="https://github.com/DeepTag/cardiac_tagging_motion_estimation/blob/main/figures/2_CH_11_15_tag_grid_img.gif"/><img width="200" height="400" src="https://github.com/DeepTag/cardiac_tagging_motion_estimation/blob/main/figures/3_CH_12_16_tag_grid_img.gif"/><img width="200" height="400" src="https://github.com/DeepTag/cardiac_tagging_motion_estimation/blob/main/figures/4_CH_10_14_tag_grid_img.gif"/></div>
+
+## Acknowledgments
+Our code implementation borrows heavily from the [VoxelMorph] (https://github.com/voxelmorph/voxelmorph)
