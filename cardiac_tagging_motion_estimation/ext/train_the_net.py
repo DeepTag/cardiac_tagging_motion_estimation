@@ -184,7 +184,6 @@ def train_Cardiac_Tagging_ME_net(net, \
     print("Training finished! It took {:.2f}s".format(time.time() - training_start_time))
 
 
-
 if __name__ == '__main__':
     # data loader
     train_dataset = '/home/DeepTag/data/Motion_tracking_20200610/val1_reverse/Cardiac_ME_train_config.json'
