@@ -162,8 +162,8 @@ def test_Cardiac_Tagging_ME_net(net, \
 
 if __name__ == '__main__':
     # data loader
-    test_dataset = '/home/DeepTag/data//Motion_tracking_20200610/val1_reverse/Cardiac_ME_test_config.json'
-    np_data_root = '/home/DeepTag/data//Motion_tracking_20200610/val1_reverse/np_data'
+    test_dataset = '/home/DeepTag/data/Motion_tracking_20200610/val1_reverse/Cardiac_ME_test_config.json'
+    np_data_root = '/home/DeepTag/data/Motion_tracking_20200610/val1_reverse/np_data'
 
     if not os.path.exists(np_data_root):
         os.mkdir(np_data_root)
