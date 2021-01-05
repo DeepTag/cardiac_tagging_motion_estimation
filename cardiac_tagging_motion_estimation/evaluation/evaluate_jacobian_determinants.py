@@ -117,6 +117,6 @@ for kk in range(12, 13):
     exist_patient['Jacobian'][model]['Jacobian']= str([np.mean(JD_vec), np.std(JD_vec, ddof=1)])
 
 
-with open(os.path.join(dst_path, 'Tagging_motion_tracking'+ '_Jacobian_12_Eu1.json'), 'w', encoding='utf-8') as f_json:
+with open(os.path.join(dst_path, 'Tagging_motion_tracking'+ '_Jacobian_12_Lag.json'), 'w', encoding='utf-8') as f_json:
     json.dump(exist_patient, f_json, indent=4)
 
