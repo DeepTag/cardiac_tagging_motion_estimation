@@ -5,7 +5,7 @@ We propose a fully unsupervised deep learning-based method for regional myocardi
 
 ## Supplementary results
 
-1. Tagging image sequence registration results: (upper-left) tagging image sequence; (upper-right) forward registration results; (bottom-left) backward registration results; (bottom-right) Lagrangian registration results.
+1. Tagging image sequence registration results: (upper-left) tagging image sequence; (upper-right) forward registration results; (bottom-left) backward registration results; (bottom-right) Lagrangian registration results. The blue grid lines are to aid visual inspection. 
 <div align=center><img width="300" height="300" src="https://github.com/DeepTag/cardiac_tagging_motion_estimation/blob/main/figures/SAX_STACK_45_23_reg_img.gif"/></div>
 
 2. Landmarks tracking results: red is ground truth, green is prediction. (left) basal slice (On the septum wall, which is between RV and LV, tags may apparently disappear in some frames, due to through-plane motion, as do the ground truth landmarks, but we still show the predicted landmarks on the closest position); (middle) middle slice; (right) apex slice. Note that our method can even track the motion on the last several frames very accurately in spite of the significant image quality degradation.
