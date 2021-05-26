@@ -1,5 +1,5 @@
 # DeepTag 
-This is the project page of the CVPR 2021 oral paper DeepTag: [[arXiv](https://arxiv.org/abs/2103.02772)] [[Poster](https://www.conferenceharvester.com/uploads/harvester/presentations/TFCCYRWN/TFCCYRWN-PDF-1702966-1339974-1-PDF(4).pdf)] [[Video](https://youtu.be/eb-aMJ6KMuk)].
+This is the project page of the CVPR 2021 oral paper DeepTag: [[arXiv](https://arxiv.org/abs/2103.02772)] [[Poster](https://www.conferenceharvester.com/uploads/harvester/presentations/TFCCYRWN/TFCCYRWN-PDF-1702966-1339974-1-PDF(4).pdf)] [[Video](https://youtu.be/0GJTEaSyLYs)].
 ## DeepTag: An Unsupervised Deep Learning Method for Motion Tracking on Cardiac Tagging Magnetic Resonance Images.
 
 We propose a fully unsupervised deep learning-based method for regional myocardium motion estimation on cardiac tagging magnetic resonance images (t-MRI). We incorporate the concept of motion decomposition and recomposition in our framework and achieve significant superior performance over traditional methods.
