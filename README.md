@@ -8,18 +8,7 @@ We propose a fully unsupervised deep learning-based method for regional myocardi
 
 If you find this code useful in your research, please consider citing:
 
-    @inproceedings{plummerCITE2018,
-	Author = {Bryan A. Plummer and Paige Kordas and M. Hadi Kiapour and Shuai Zheng and Robinson Piramuthu and Svetlana Lazebnik},
-	Title = {Conditional Image-Text Embedding Networks},
-	Booktitle  = {The European Conference on Computer Vision (ECCV)},
-	Year = {2018}
-    }
-
-This code
-
-To cite this paper:
-
-@InProceedings{Ye_2021_CVPR,
+    @InProceedings{Ye_2021_CVPR,
     author    = {Ye, Meng and Kanski, Mikael and Yang, Dong and Chang, Qi and Yan, Zhennan and Huang, Qiaoying and Axel, Leon and Metaxas, Dimitris},
     title     = {DeepTag: An Unsupervised Deep Learning Method for Motion Tracking on Cardiac Tagging Magnetic Resonance Images},
     booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
