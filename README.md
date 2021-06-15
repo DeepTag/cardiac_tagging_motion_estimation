@@ -6,6 +6,17 @@ We propose a fully unsupervised deep learning-based method for regional myocardi
 
 <div align=center><img width="650" height="300" src="https://github.com/DeepTag/cardiac_tagging_motion_estimation/blob/main/figures/MT_tmri.png"/></div>
 
+If you find this code useful in your research, please consider citing:
+
+    @inproceedings{plummerCITE2018,
+	Author = {Bryan A. Plummer and Paige Kordas and M. Hadi Kiapour and Shuai Zheng and Robinson Piramuthu and Svetlana Lazebnik},
+	Title = {Conditional Image-Text Embedding Networks},
+	Booktitle  = {The European Conference on Computer Vision (ECCV)},
+	Year = {2018}
+    }
+
+This code
+
 To cite this paper:
 
 @InProceedings{Ye_2021_CVPR,
