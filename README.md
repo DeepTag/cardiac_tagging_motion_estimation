@@ -6,6 +6,7 @@ We propose a fully unsupervised deep learning-based method for regional myocardi
 
 <div align=center><img width="650" height="300" src="https://github.com/DeepTag/cardiac_tagging_motion_estimation/blob/main/figures/MT_tmri.png"/></div>
 
+
 If you find this code useful in your research, please consider citing:
 
     @InProceedings{Ye_2021_CVPR,
