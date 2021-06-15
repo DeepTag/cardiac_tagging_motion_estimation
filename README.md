@@ -6,6 +6,16 @@ We propose a fully unsupervised deep learning-based method for regional myocardi
 
 <div align=center><img width="650" height="300" src="https://github.com/DeepTag/cardiac_tagging_motion_estimation/blob/main/figures/MT_tmri.png"/></div>
 
+To cite this paper:
+@InProceedings{Ye_2021_CVPR,
+    author    = {Ye, Meng and Kanski, Mikael and Yang, Dong and Chang, Qi and Yan, Zhennan and Huang, Qiaoying and Axel, Leon and Metaxas, Dimitris},
+    title     = {DeepTag: An Unsupervised Deep Learning Method for Motion Tracking on Cardiac Tagging Magnetic Resonance Images},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2021},
+    pages     = {7261-7271}
+}
+
 ## Supplementary results
 
 1. Tagging image sequence registration results: (upper-left) tagging image sequence; (upper-right) forward registration results; (bottom-left) backward registration results; (bottom-right) Lagrangian registration results. The blue grid lines are to aid visual inspection. 
