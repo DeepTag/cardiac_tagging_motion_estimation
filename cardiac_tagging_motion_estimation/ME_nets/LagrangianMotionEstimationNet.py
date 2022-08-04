@@ -218,7 +218,7 @@ class Lagrangian_flow(nn.Module):
 
         self.spatial_transform = SpatialTransformer(vol_size)
 
-    def forward(self, inf_flow, forward=True):
+    def forward(self, inf_flow, forward_flow=True):
         """
         Pass input x through forward once
             :param inf_flow: inter frame motion field
@@ -228,8 +228,8 @@ class Lagrangian_flow(nn.Module):
         lag_flow = torch.zeros(shape, device=inf_flow.device)
         lag_flow[0, ::] = inf_flow[0,::]
         for k in range (1, seq_len):
-            if forward:
-                src = lag_flow[k-1, ::]
+            if forward_flow:
+                src = lag_flow[k-1, ::].clone()
                 sum_flow = inf_flow[k:k+1, ::]
             else:         
                 src = inf_flow[k, ::]
