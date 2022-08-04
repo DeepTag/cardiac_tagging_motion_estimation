@@ -229,8 +229,8 @@ class Lagrangian_flow(nn.Module):
         lag_flow[0, ::] = inf_flow[0,::]
         for k in range (1, seq_len):
             if forward:
-                src = lag_flow[k, ::]
-                sum_flow = inf_flow[k-1:k, ::]
+                src = lag_flow[k-1, ::]
+                sum_flow = inf_flow[k:k+1, ::]
             else:         
                 src = inf_flow[k, ::]
                 sum_flow = lag_flow[k-1:k, ::]           
