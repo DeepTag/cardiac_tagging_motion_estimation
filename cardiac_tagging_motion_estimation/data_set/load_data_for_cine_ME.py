@@ -157,11 +157,11 @@ def add_np_data(project_data_config_files, data_type, model_root):
             # list images_data_niix in each dataset
             cine_npz = each_trainingSets.get('cine')
             if cine_npz is None: continue
-            cine_npz_List.append((load_np_mask_array_from_npz(cine_npz[0]))[0])
+            cine_npz_List.append((load_np_mask_array_from_npz(cine_npz[0])))
 
             tag_npz = each_trainingSets.get('tag')
             if tag_npz is None: continue
-            tag_npz_List.append((load_np_mask_array_from_npz(tag_npz[0]))[0])
+            tag_npz_List.append((load_np_mask_array_from_npz(tag_npz[0])))
 
 
             # # concatenate the np_nets as samples
