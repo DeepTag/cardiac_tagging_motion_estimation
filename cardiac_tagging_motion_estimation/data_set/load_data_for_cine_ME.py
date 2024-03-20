@@ -164,19 +164,6 @@ def add_np_data(project_data_config_files, data_type, model_root):
             tag_npz_List.append((load_np_mask_array_from_npz(tag_npz[0])))
 
 
-            # # concatenate the np_nets as samples
-            # if grouped_np_cine_npz is None:
-            #     grouped_np_cine_npz = cine_npz_List
-            # # sample axis is default to 0
-            # else:
-            #     grouped_np_cine_npz = np.concatenate([grouped_np_cine_npz, cine_npz_List], axis=0)
-
-            # if grouped_np_tag_npz is None:
-            #     grouped_np_tag_npz = tag_npz_List
-            # # sample axis is default to 0
-            # else:
-            #     grouped_np_tag_npz = np.concatenate([grouped_np_tag_npz, tag_npz_List], axis=0)
-
         if data_type == 'train':
             data_type_temp = DataType.TRAINING
         else:
