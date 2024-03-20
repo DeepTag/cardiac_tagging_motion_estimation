@@ -145,8 +145,10 @@ def add_np_data(project_data_config_files, data_type, model_root):
         filesListDict = grouped_data_sets.get(group_name)
         if filesListDict.__class__ is not dict: continue
         logger.info('adding %s into nets data from npz data input...', group_name)
-        grouped_np_cine_npz = None # shape = (samples, seq_len, y, x)
-        grouped_np_tag_npz = None  # shape = (samples, seq_len, y, x)
+        # grouped_np_cine_npz = None # shape = (samples, seq_len, y, x)
+        # grouped_np_tag_npz = None  # shape = (samples, seq_len, y, x)
+        cine_npz_List = []
+        tag_npz_List = []
 
         # for sample in tqdm(filesListDict.keys()):
         for sample in filesListDict.keys():
@@ -155,32 +157,35 @@ def add_np_data(project_data_config_files, data_type, model_root):
             # list images_data_niix in each dataset
             cine_npz = each_trainingSets.get('cine')
             if cine_npz is None: continue
-            cine_npz_List = []
             cine_npz_List.append((load_np_mask_array_from_npz(cine_npz[0]))[0])
 
             tag_npz = each_trainingSets.get('tag')
             if tag_npz is None: continue
-            tag_npz_List = []
             tag_npz_List.append((load_np_mask_array_from_npz(tag_npz[0]))[0])
 
 
-            # concatenate the np_nets as samples
-            if grouped_np_cine_npz is None:
-                grouped_np_cine_npz = cine_npz_List
-            # sample axis is default to 0
-            else:
-                grouped_np_cine_npz = np.concatenate([grouped_np_cine_npz, cine_npz_List], axis=0)
+            # # concatenate the np_nets as samples
+            # if grouped_np_cine_npz is None:
+            #     grouped_np_cine_npz = cine_npz_List
+            # # sample axis is default to 0
+            # else:
+            #     grouped_np_cine_npz = np.concatenate([grouped_np_cine_npz, cine_npz_List], axis=0)
 
-            if grouped_np_tag_npz is None:
-                grouped_np_tag_npz = tag_npz_List
-            # sample axis is default to 0
-            else:
-                grouped_np_tag_npz = np.concatenate([grouped_np_tag_npz, tag_npz_List], axis=0)
+            # if grouped_np_tag_npz is None:
+            #     grouped_np_tag_npz = tag_npz_List
+            # # sample axis is default to 0
+            # else:
+            #     grouped_np_tag_npz = np.concatenate([grouped_np_tag_npz, tag_npz_List], axis=0)
 
         if data_type == 'train':
             data_type_temp = DataType.TRAINING
         else:
             data_type_temp = DataType.VALIDATION
+
+        # concatenate once for all npzs
+        grouped_np_cine_npz = np.concatenate(cine_npz_List, axis=0)
+        grouped_np_tag_npz = np.concatenate(tag_npz_List, axis=0)
+
         save_np_data(model_root, np_images=grouped_np_cine_npz , np_masks=grouped_np_tag_npz, data_type=data_type_temp)
 
     # return  grouped_np_pc_npz, grouped_np_lv_lx_npz
